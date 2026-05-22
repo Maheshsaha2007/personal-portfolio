@@ -57,3 +57,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// 3D Grid Scroll Parallax
+const grid3D = document.querySelector('.grid-3d');
+window.addEventListener('scroll', () => {
+    if (grid3D) {
+        // Move the grid down the Y-axis based on scroll for a forward motion effect
+        // The numbers control speed and perspective
+        const scrolled = window.scrollY;
+        // Reset translation using modulo so it loops infinitely instead of rolling off screen!
+        const yOffset = (scrolled * 0.8) % 80;
+        grid3D.style.transform = `perspective(600px) rotateX(60deg) translateY(${scrolled * 0.5}px)`;
+    }
+});
