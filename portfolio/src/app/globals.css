@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-display: var(--font-display), monospace;
+  
+  --color-dark-bg: #050505;
+  --color-dark-surface: #0a0a0c;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  
+  --color-neon-blue: #00f2ff;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-pink: #ec4899;
+}
+
+/* Base styling */
+:root {
+  background-color: #050505;
+  color: #f5f5f7;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 255, 0.4);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #050505;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Utilities */
+.glass {
+  background: rgba(10, 10, 12, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 242, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 242, 255, 0.05);
+}
+
+/* Ambient glows */
+.glow-text-blue {
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.glow-border-blue:hover {
+  border-color: rgba(0, 242, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+}
+
+/* Matrix layout structure overlay background */
+.bg-cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom font styles */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Hide original cursor when active */
+.custom-cursor-active, .custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Counter scrollbar-prevention styles */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
