@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Timeline', href: '#timeline' },
+  { label: 'Certs', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -17,10 +18,15 @@ export function FloatingNav() {
   const [activeSection, setActiveSection] = useState('#home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = React.useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentY = window.scrollY;
+      setScrolled(currentY > 50);
+      setVisible(currentY < lastScrollY.current || currentY < 80);
+      lastScrollY.current = currentY;
 
       // Simple active section detection based on page scroll coordinates
       const sections = NAV_ITEMS.map(item => document.querySelector(item.href));
@@ -56,8 +62,8 @@ export function FloatingNav() {
       <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-center pointer-events-none">
         <motion.nav
           initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          animate={{ y: visible ? 0 : -120, opacity: visible ? 1 : 0 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           className={`pointer-events-auto flex items-center justify-between px-6 py-3 rounded-full w-full max-w-4xl glass transition-all duration-300 ${
             scrolled ? 'bg-dark-bg/60 shadow-lg border-white/10' : 'bg-transparent border-transparent'
           }`}

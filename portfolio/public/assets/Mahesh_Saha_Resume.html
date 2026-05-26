@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahesh Saha — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f1117;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --line: #e5e7eb;
+      --bg: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: var(--ink);
+      background: #f3f4f6;
+      padding: 24px;
+    }
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 14mm 16mm;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .tagline {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-top: 10px;
+      font-size: 9pt;
+      color: var(--muted);
+    }
+    .contact a { color: var(--accent); text-decoration: none; }
+    h2 {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 4px;
+      margin: 14px 0 8px;
+    }
+    p { color: var(--muted); margin-bottom: 6px; }
+    .summary { color: var(--ink); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+    }
+    .skill-group strong {
+      display: block;
+      font-size: 9pt;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .skill-group span { font-size: 9pt; color: var(--muted); }
+    .entry { margin-bottom: 10px; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .entry-head h3 { font-size: 10.5pt; font-weight: 600; color: var(--ink); }
+    .entry-head .when { font-size: 9pt; color: var(--muted); white-space: nowrap; }
+    .entry .org { font-size: 9.5pt; font-weight: 500; color: var(--accent); }
+    .entry ul {
+      margin: 4px 0 0 16px;
+      color: var(--muted);
+      font-size: 9.5pt;
+    }
+    .entry ul li { margin-bottom: 2px; }
+    .project {
+      margin-bottom: 8px;
+      padding-left: 0;
+    }
+    .project-title {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 10pt;
+    }
+    .project-meta { font-size: 8.5pt; color: var(--muted); margin: 2px 0; }
+    .tech { font-size: 8.5pt; color: var(--muted); font-style: italic; }
+    .project a { color: var(--accent); font-size: 8.5pt; }
+    .certs { display: grid; gap: 6px; }
+    .cert-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 9.5pt;
+    }
+    .cert-row span:last-child { color: var(--muted); white-space: nowrap; }
+    .note {
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: #f9fafb;
+      border: 1px dashed var(--line);
+      font-size: 8pt;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; max-width: none; padding: 12mm 14mm; }
+      .no-print { display: none !important; }
+      a { color: var(--ink) !important; }
+    }
+    .print-btn {
+      display: block;
+      margin: 0 auto 16px;
+      padding: 10px 20px;
+      font-family: inherit;
+      font-size: 10pt;
+      font-weight: 600;
+      background: var(--ink);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .print-btn:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <button class="print-btn no-print" onclick="window.print()">Save as PDF (Print → Save as PDF)</button>
+
+  <article class="page">
+    <header>
+      <h1>Mahesh Saha</h1>
+      <p class="tagline">Software Developer · Creative AI Developer · ML Enthusiast</p>
+      <div class="contact">
+        <span>Jaipur, Rajasthan, India</span>
+        <span>maheshsaha2007@gmail.com</span>
+        <a href="https://github.com/Maheshsaha2007">github.com/Maheshsaha2007</a>
+        <a href="https://www.linkedin.com/in/mahesh-saha-a8438a377">linkedin.com/in/mahesh-saha-a8438a377</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Passionate software developer focused on modern, interactive web applications and data-driven systems.
+        Experienced in responsive frontends (HTML, CSS, JavaScript, React, Next.js, Tailwind) and Python backends
+        (Flask, Pandas, data analytics). Actively expanding into machine learning, neural networks, and immersive 3D UI
+        (Three.js, React Three Fiber). Delivers clean code, cinematic user experiences, and intelligent product interfaces.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <strong>Frontend</strong>
+          <span>HTML5, CSS3, JavaScript (ES6+), React, Next.js, Tailwind CSS, Bootstrap, GSAP, Framer Motion</span>
+        </div>
+        <div class="skill-group">
+          <strong>Backend & Data</strong>
+          <span>Python, Flask, Node.js, Express, Pandas, NumPy, MongoDB, REST APIs</span>
+        </div>
+        <div class="skill-group">
+          <strong>AI / ML</strong>
+          <span>TensorFlow, Scikit-Learn, NLP pipelines, predictive modeling (active learner)</span>
+        </div>
+        <div class="skill-group">
+          <strong>Tools & Other</strong>
+          <span>Git, GitHub, VS Code, Figma, Firebase, Linux CLI, TypeScript, C, Java</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Full-Stack Software Development</h3>
+          <span class="when">2024 — Present</span>
+        </div>
+        <p class="org">Freelance & Independent Projects</p>
+        <ul>
+          <li>Built analytical web engines, dashboards, and responsive interfaces with glassmorphism and 3D interactions.</li>
+          <li>Developed Flask + Pandas backends for data ingestion, cleaning, visualization, and reporting.</li>
+          <li>Shipped production portfolio using Next.js, React Three Fiber, GSAP, and Lenis smooth scrolling.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Advanced AI & Machine Learning Research</h3>
+          <span class="when">2025 — Present</span>
+        </div>
+        <p class="org">Self-Directed Learning</p>
+        <ul>
+          <li>Studying neural networks, deep learning, and integrating predictive models with web UIs.</li>
+          <li>Prototyping NLP assistants and environmental prediction dashboards.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+      <p class="note no-print" style="margin-bottom:8px;">
+        <!-- Edit links below when you add live demos / repo URLs -->
+      </p>
+
+      <div class="project">
+        <div class="project-title">ClimaVision — Weather Dashboard</div>
+        <p class="project-meta">Responsive forecast UI with animated states and glassmorphic panels.</p>
+        <p class="tech">HTML · CSS · JavaScript · Data visualization</p>
+        <p><a href="https://github.com/Maheshsaha2007">Project link — update in HTML/PDF</a></p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Portfolio Website (3D Cinematic)</div>
+        <p class="project-meta">Award-style personal site with R3F hero scene, GSAP scroll, Lenis, glass UI.</p>
+        <p class="tech">Next.js · React · Tailwind · Three.js · Framer Motion</p>
+        <p><a href="https://github.com/Maheshsaha2007">Project link — update in HTML/PDF</a></p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">AI Assistant — ML-Powered Assistant</div>
+        <p class="project-meta">Conversational prototype with Python/TensorFlow NLP inference pipelines.</p>
+        <p class="tech">Python · TensorFlow · NLP · Flask</p>
+        <p><a href="https://github.com/Maheshsaha2007">Project link — update in HTML/PDF</a></p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">EcoPulse Prediction Hub</div>
+        <p class="project-meta">Environmental forecasting dashboard with ML-driven trend analysis.</p>
+        <p class="tech">Python · Flask · Pandas · Scikit-Learn · Plotly</p>
+        <p><a href="https://github.com/Maheshsaha2007">Project link — update in HTML/PDF</a></p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Zenith Data Analytics Engine</div>
+        <p class="project-meta">CSV/JSON ingestion, automated cleaning, stats, and interactive charting via Flask.</p>
+        <p class="tech">Flask · Pandas · NumPy · Plotly · Tailwind CSS</p>
+        <p><a href="https://github.com/Maheshsaha2007">Project link — update in HTML/PDF</a></p>
+      </div>
+
+      <div class="project">
+        <div class="project-title">SnapFrame — Photo & Security Utilities</div>
+        <p class="project-meta">React + Firebase media workflows; client-side Web Crypto password tooling.</p>
+        <p class="tech">React · Firebase · JavaScript · Web Crypto API</p>
+        <p><a href="https://github.com/Maheshsaha2007">Project link — update in HTML/PDF</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Computer Science & Software Foundations</h3>
+          <span class="when">2023</span>
+        </div>
+        <p class="org">Academic Curriculum</p>
+        <ul>
+          <li>Algorithms, data structures, OOP (Java/C), and relational data concepts.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="certs">
+        <div class="cert-row">
+          <span><strong>Advanced Web Applications & React Frameworks</strong> — Tech Academy Hub</span>
+          <span>Dec 2024</span>
+        </div>
+        <div class="cert-row">
+          <span><strong>Python for Data Science & ML Foundations</strong> — Data Intelligence Group</span>
+          <span>Oct 2024</span>
+        </div>
+        <div class="cert-row">
+          <span><strong>Modern UI/UX Design System Architectures</strong> — Design Elite Collective</span>
+          <span>Jul 2024</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="note">
+      <strong>To customize:</strong> Open this file in a browser, edit text and project URLs, then use Print → Save as PDF.
+      Replace placeholder GitHub links with your real repo or live demo URLs.
+    </p>
+  </article>
+</body>
+</html>

@@ -51,7 +51,7 @@ export function ContactSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/5 pb-8">
           <div className="flex flex-col gap-2">
             <span className="text-[10px] tracking-widest uppercase font-display text-neon-blue">
-              05 // Contact Endpoint
+              06 // Contact
             </span>
             <h2 className="text-3xl md:text-5xl font-bold font-display text-white tracking-tight">
               Get In Touch

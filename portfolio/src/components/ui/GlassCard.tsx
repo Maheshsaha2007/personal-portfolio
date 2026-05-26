@@ -39,11 +39,14 @@ export function GlassCard({ children, className, glowColor = 'none', ...props }:
 // ==========================================
 // 2. MAGNETICBUTTON MOLECULE
 // ==========================================
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type MagneticButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'onAnimationStart' | 'onAnimationEnd' | 'onAnimationIteration' | 'onDrag' | 'onDragStart' | 'onDragEnd'
+> & {
   children: React.ReactNode;
   className?: string;
-  strength?: number; // strength of pull
-}
+  strength?: number;
+};
 
 export function MagneticButton({ children, className, strength = 35, ...props }: MagneticButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);

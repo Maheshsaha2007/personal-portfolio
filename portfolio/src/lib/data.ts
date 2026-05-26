@@ -46,6 +46,8 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/mahesh-saha-a8438a377',
   twitter: 'https://x.com',
   instagram: 'https://instagram.com',
+  resumeUrl: '/assets/Mahesh_Saha_Resume.pdf',
+  photoUrl: '/assets/mahesh_pic.jpg',
   bio: 'I am a passionate software developer dedicated to crafting modern interactive web applications and data-driven systems. Focused on robust frontends and backend data engineering, I am constantly expanding my expertise into Machine Learning, Neural Networks, and Advanced AI.',
   stats: [
     { label: 'Major Projects Built', value: '10+' },
@@ -56,50 +58,85 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'climavision',
+    title: 'ClimaVision',
+    description: 'Weather dashboard with cinematic data visualization and live forecast panels.',
+    longDescription: 'ClimaVision is a responsive weather intelligence dashboard built with semantic HTML, CSS animations, and vanilla JavaScript. It surfaces multi-day forecasts, animated condition states, and glassmorphic UI panels optimized for quick environmental scanning.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Charts', 'Glass UI'],
+    image: '/assets/stock_predictor.png',
+    github: 'https://github.com/Maheshsaha2007',
+    category: 'Frontend',
+  },
+  {
+    id: 'portfolio',
+    title: 'Portfolio Website',
+    description: 'This cinematic 3D portfolio — Next.js, R3F, GSAP, and Framer Motion.',
+    longDescription: 'A production-grade personal portfolio featuring React Three Fiber hero scenes, Lenis smooth scrolling, GSAP ScrollTrigger storytelling, glassmorphism, and magnetic micro-interactions designed for award-level presentation.',
+    tech: ['Next.js', 'React', 'Tailwind', 'Framer Motion', 'Three.js'],
+    image: '/assets/data_analytics.png',
+    github: 'https://github.com/Maheshsaha2007',
+    category: 'Full Stack',
+  },
+  {
+    id: 'ai-assistant',
+    title: 'AI Assistant',
+    description: 'ML-powered conversational assistant with NLP inference pipelines.',
+    longDescription: 'An intelligent assistant prototype combining Python backends with TensorFlow models for intent classification and response generation. Designed as a modular stack for experimenting with NLP workflows and model serving.',
+    tech: ['Python', 'TensorFlow', 'NLP', 'Flask'],
+    image: '/assets/stock_predictor.png',
+    github: 'https://github.com/Maheshsaha2007',
+    category: 'AI & ML',
+    stats: [
+      { label: 'Latency', value: '<300ms' },
+      { label: 'Intents', value: '24+' },
+      { label: 'Accuracy', value: '91%' },
+    ],
+  },
+  {
     id: 'ecopulse',
     title: 'EcoPulse Prediction Hub',
-    description: 'An AI-powered environmental dashboard predicting ecological trends and metrics.',
-    longDescription: 'EcoPulse is an environmental forecasting engine designed to predict critical climate metrics. Leveraging Machine Learning algorithms, it runs real-time simulations to aid in ecological decision-making. The backend, powered by Python and Flask, processes high-dimensional datasets while the custom UI offers rich visualization tools for researcher-level insights.',
-    tech: ['Python', 'Flask', 'Pandas', 'Scikit-Learn', 'Plotly', 'Glassmorphism UI'],
-    image: '/assets/stock_predictor.png', // Fallback to an available mockup
+    description: 'AI-powered environmental dashboard predicting ecological trends and metrics.',
+    longDescription: 'EcoPulse is an environmental forecasting engine designed to predict critical climate metrics. Leveraging Machine Learning algorithms, it runs real-time simulations to aid in ecological decision-making with Flask and Pandas backends.',
+    tech: ['Python', 'Flask', 'Pandas', 'Scikit-Learn', 'Plotly'],
+    image: '/assets/stock_predictor.png',
     github: 'https://github.com/Maheshsaha2007',
     category: 'AI & ML',
     stats: [
       { label: 'Accuracy', value: '94.2%' },
       { label: 'Process Speed', value: '<200ms' },
-      { label: 'Data Points', value: '10k+' }
-    ]
+      { label: 'Data Points', value: '10k+' },
+    ],
   },
   {
     id: 'zenith',
     title: 'Zenith Data Analytics Engine',
-    description: 'A heavy-duty visual pipeline parser extracting patterns from complex datasets.',
-    longDescription: 'Zenith represents a modular web engine optimized for heavy data manipulation and statistical forecasting. It delivers high-frequency visual charting, automatic correlation discovery, and customizable mathematical layout options. Designed for financial and operational tracking, it bridges high-performance data processing with immersive designer aesthetics.',
-    tech: ['Flask', 'Pandas', 'NumPy', 'Data-Viz', 'Tailwind CSS', 'Vanilla JS'],
+    description: 'Visual pipeline parser extracting patterns from complex datasets.',
+    longDescription: 'Zenith is a modular analytics engine for heavy data manipulation and statistical forecasting. It delivers interactive charting, correlation discovery, and customizable layouts for operational and research workflows.',
+    tech: ['Flask', 'Pandas', 'NumPy', 'Plotly', 'Tailwind CSS'],
     image: '/assets/data_analytics.png',
     github: 'https://github.com/Maheshsaha2007',
     category: 'Data Engineering',
     stats: [
       { label: 'Throughput', value: '2GB/s' },
       { label: 'Chart Render', value: '60fps' },
-      { label: 'Custom Parsers', value: '8' }
-    ]
+      { label: 'Parsers', value: '8' },
+    ],
   },
   {
     id: 'snapframe',
-    title: 'Secure Snapshot Portal',
-    description: 'A client-side security utility leveraging cryptographic functions.',
-    longDescription: 'Designed as a local-first security platform, this cryptographic generator enables users to enforce high-entropy standards on local data. It offers real-time entropy calculation, pattern scanning, and custom rules without sending any raw data to central servers, adhering to zero-trust principles.',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'Web Crypto API', 'Interactive UI'],
+    title: 'SnapFrame',
+    description: 'Photo sharing experience with real-time sync and secure client utilities.',
+    longDescription: 'SnapFrame combines a React interface with Firebase for media workflows, plus a local-first cryptographic utility for secure password generation using the Web Crypto API — zero server exposure for sensitive operations.',
+    tech: ['React', 'Firebase', 'JavaScript', 'Web Crypto API'],
     image: '/assets/password_generator.png',
     github: 'https://github.com/Maheshsaha2007',
-    category: 'Security Utility',
+    category: 'Full Stack',
     stats: [
       { label: 'Client Processing', value: '100%' },
-      { label: 'Entropy Scale', value: 'Perfect' },
-      { label: 'Offline Ready', value: 'Yes' }
-    ]
-  }
+      { label: 'Realtime', value: 'Yes' },
+      { label: 'Offline', value: 'Ready' },
+    ],
+  },
 ];
 
 export const SKILLS: Skill[] = [

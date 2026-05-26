@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
-import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, Download } from 'lucide-react';
 import { PERSONAL_INFO } from '@/lib/data';
 import { GlowText, MagneticButton } from '@/components/ui/GlassCard';
 
@@ -43,7 +43,7 @@ export function HeroSection() {
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col justify-between items-center px-6 py-20 overflow-hidden"
+      className="relative min-h-screen w-full flex flex-col justify-between items-center px-6 py-20 overflow-hidden isolate"
     >
       {/* 3D Canvas dynamic layer */}
       <HeroScene />
@@ -62,7 +62,7 @@ export function HeroSection() {
       <div className="h-10" />
 
       {/* Hero central layout titles */}
-      <div className="w-full max-w-4xl flex flex-col items-center text-center gap-6 z-10 select-none">
+      <div className="w-full max-w-4xl flex flex-col items-center text-center gap-6 z-10 select-none pointer-events-none">
         {/* Availability Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -82,7 +82,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white tracking-tight leading-[1.05]"
+          className="text-[clamp(2.25rem,6vw,5.5rem)] font-bold font-display text-white tracking-tight leading-[1.05]"
         >
           I build{' '}
           <GlowText text="intelligent" color="blue" italic={true} className="mx-2" />
@@ -105,7 +105,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center gap-6 mt-4"
+          className="flex flex-wrap items-center justify-center gap-4 mt-4 pointer-events-auto"
         >
           <MagneticButton
             onClick={() => {
@@ -129,6 +129,21 @@ export function HeroSection() {
           >
             Contact Me
           </MagneticButton>
+
+          <MagneticButton
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = PERSONAL_INFO.resumeUrl;
+              link.download = 'Mahesh_Saha_Resume.pdf';
+              link.click();
+            }}
+            className="border border-neon-purple/30 text-neon-purple hover:border-neon-purple/60 hover:text-white"
+          >
+            <span className="flex items-center gap-2">
+              Download CV
+              <Download size={14} />
+            </span>
+          </MagneticButton>
         </motion.div>
       </div>
 
@@ -137,7 +152,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="flex flex-col items-center gap-2 cursor-pointer z-10 group"
+        className="flex flex-col items-center gap-2 cursor-pointer z-10 group pointer-events-auto"
         onClick={scrollToNextSection}
       >
         <span className="text-[9px] tracking-widest uppercase font-display text-zinc-500 group-hover:text-zinc-300 transition-colors">

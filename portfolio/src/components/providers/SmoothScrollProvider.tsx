@@ -1,47 +1,76 @@
 'use client';
-import React, { createContext, useContext, useEffect, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const SmoothScrollContext = createContext<Lenis | null>(null);
 
 export const useSmoothScroll = () => useContext(SmoothScrollContext);
 
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
-  const lenisRef = useRef<Lenis | null>(null);
+  const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis scroll engine
-    const lenis = new Lenis({
+    gsap.registerPlugin(ScrollTrigger);
+
+    const instance = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth exponential ease
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
+      wheelMultiplier: 1,
       touchMultiplier: 1.5,
     });
 
-    lenisRef.current = lenis;
+    setLenis(instance);
 
-    // Connect Lenis to requestAnimationFrame loop
+    instance.on('scroll', ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy(document.documentElement, {
+      scrollTop(value) {
+        if (arguments.length && typeof value === 'number') {
+          instance.scrollTo(value, { immediate: true });
+        }
+        return instance.scroll;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+    });
+
+    ScrollTrigger.defaults({ scroller: document.documentElement });
+
     let rafId: number;
-    function raf(time: number) {
-      lenis.raf(time);
+    const raf = (time: number) => {
+      instance.raf(time);
       rafId = requestAnimationFrame(raf);
-    }
+    };
     rafId = requestAnimationFrame(raf);
 
-    // Synchronize to window level
-    window.addEventListener('resize', () => lenis.resize());
+    const onResize = () => {
+      instance.resize();
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', onResize);
 
     return () => {
       cancelAnimationFrame(rafId);
-      lenis.destroy();
+      window.removeEventListener('resize', onResize);
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      instance.destroy();
+      setLenis(null);
     };
   }, []);
 
   return (
-    <SmoothScrollContext.Provider value={lenisRef.current}>
+    <SmoothScrollContext.Provider value={lenis}>
       {children}
     </SmoothScrollContext.Provider>
   );

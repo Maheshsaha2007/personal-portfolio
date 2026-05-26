@@ -1,6 +1,22 @@
-# 🚀 Mahesh Saha — Personal Portfolio
+# Mahesh Saha — Personal Portfolio
 
-A premium, 3D-inspired personal portfolio website built with **HTML**, **CSS**, and **JavaScript**. Features a dark neon theme with glassmorphism effects, interactive 3D tilt animations, and a cinematic scroll experience.
+## New: Next.js 3D portfolio (`portfolio/`)
+
+Award-style cinematic site with **React Three Fiber**, **GSAP ScrollTrigger**, **Lenis**, and **Framer Motion**.
+
+```bash
+cd portfolio
+npm install
+npm run dev
+```
+
+See [portfolio/README.md](portfolio/README.md).
+
+---
+
+## Legacy static site
+
+The original portfolio is built with **HTML**, **CSS**, and **JavaScript** — dark neon theme, glassmorphism, and 3D tilt animations.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-00f2ff?style=for-the-badge)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)

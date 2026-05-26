@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   title: `${PERSONAL_INFO.name} | ${PERSONAL_INFO.title}`,
   description: PERSONAL_INFO.bio,
   authors: [{ name: PERSONAL_INFO.name }],
-  viewport: 'width=device-width, initial-scale=1',
+  openGraph: {
+    title: `${PERSONAL_INFO.name} | Portfolio`,
+    description: PERSONAL_INFO.subtitle,
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

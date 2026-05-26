@@ -53,17 +53,26 @@ export function SkillsSection() {
           </div>
         </div>
 
-        {/* Bento Grid Skills display */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, index) => (
+        {/* Bento grid — featured cells span multiple columns */}
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 auto-rows-fr gap-4 md:gap-6">
+          {filteredSkills.map((skill, index) => {
+            const isFeatured = index === 0 || index === 3;
+            const spanClass = isFeatured
+              ? 'md:col-span-2 lg:col-span-3'
+              : 'md:col-span-2 lg:col-span-2';
+            return (
             <motion.div
               key={skill.name}
+              className={spanClass}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <GlassCard className="h-full flex flex-col justify-between hover:border-white/20 transition-all duration-300">
+              <GlassCard
+                glowColor={skill.category === 'frontend' ? 'blue' : skill.category === 'backend' ? 'purple' : 'pink'}
+                className="h-full flex flex-col justify-between hover:border-white/20 hover:-translate-y-1 transition-all duration-500 min-h-[160px]"
+              >
                 <div className="flex flex-col gap-4">
                   {/* Card category tags */}
                   <div className="flex items-center justify-between">
@@ -102,7 +111,8 @@ export function SkillsSection() {
                 </div>
               </GlassCard>
             </motion.div>
-          ))}
+          );
+          })}
         </div>
 
       </div>

@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mahesh Saha — Premium 3D Portfolio
 
-## Getting Started
+Cinematic personal portfolio built with Next.js, React Three Fiber, GSAP, Framer Motion, and Lenis smooth scrolling.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, TypeScript)
+- **Tailwind CSS v4**
+- **Three.js + React Three Fiber + Drei**
+- **GSAP ScrollTrigger**
+- **Framer Motion** (`motion/react`)
+- **Lenis** smooth scroll
+
+## Getting started
 
 ```bash
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Assets
 
-To learn more about Next.js, take a look at the following resources:
+Place these files in `public/assets/`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `mahesh_pic.jpg` — profile photo
+- `Mahesh_Saha_Resume.pdf` — resume for Download CV
+- Project mockups: `stock_predictor.png`, `data_analytics.png`, `password_generator.png`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content
 
-## Deploy on Vercel
+Edit `src/lib/data.ts` for projects, skills, timeline, certifications, and social links.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Legacy site
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The original vanilla HTML portfolio (`index.html`, `style.css`, `script.js`) remains in the parent folder for reference.
+
+## Deploy
+
+Recommended: [Vercel](https://vercel.com) — import the `portfolio` directory as the project root.

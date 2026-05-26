@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Terminal, Circle, Sparkles, Folder, FileCode, CheckCircle2 } from 'lucide-react';
 import { PERSONAL_INFO, TERMINAL_ABOUT } from '@/lib/data';
@@ -99,8 +100,28 @@ export function AboutSection() {
         {/* Section Content (Split Grid) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Bio + Stats layout left (Col 5) */}
+          {/* Bio + photo + stats (Col 5) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
+            <TiltCard maxTilt={8} className="p-0 overflow-hidden min-h-[200px]">
+              <div className="relative w-full aspect-[4/3]">
+                <Image
+                  src={PERSONAL_INFO.photoUrl}
+                  alt={PERSONAL_INFO.name}
+                  fill
+                  className="object-cover object-top opacity-90"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <p className="text-lg font-bold font-display text-white">{PERSONAL_INFO.name}</p>
+                  <p className="text-[10px] font-display uppercase tracking-widest text-neon-blue">
+                    {PERSONAL_INFO.location}
+                  </p>
+                </div>
+              </div>
+            </TiltCard>
+
             <TiltCard maxTilt={6} className="h-full flex flex-col justify-between">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2 text-[10px] tracking-widest text-neon-purple font-display uppercase">

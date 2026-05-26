@@ -11,7 +11,7 @@ export function HeroScene() {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <div className="absolute inset-0 w-full h-full -z-10 bg-dark-bg overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 w-full h-full z-0 bg-dark-bg overflow-hidden">
       {/* Background Radial Light spotlight overlays */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-neon-blue/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-neon-purple/5 rounded-full blur-[120px]" />
