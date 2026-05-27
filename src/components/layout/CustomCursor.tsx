@@ -16,6 +16,10 @@ export function CustomCursor() {
   const springX = useSpring(cursorX, springConfig);
   const springY = useSpring(cursorY, springConfig);
 
+  // Inner core fast springs
+  const innerSpringX = useSpring(cursorX, { damping: 100, stiffness: 1000 });
+  const innerSpringY = useSpring(cursorY, { damping: 100, stiffness: 1000 });
+
   useEffect(() => {
     setMounted(true);
     setHidden(false);
@@ -83,8 +87,8 @@ export function CustomCursor() {
       <motion.div
         className="fixed top-0 left-0 w-1.5 h-1.5 bg-neon-purple rounded-full pointer-events-none z-9999 mix-blend-screen"
         style={{
-          x: useSpring(cursorX, { damping: 100, stiffness: 1000 }), // almost zero lag
-          y: useSpring(cursorY, { damping: 100, stiffness: 1000 }),
+          x: innerSpringX,
+          y: innerSpringY,
           // Adjust offset to center inside the 32px outer ring
           transform: 'translate(13px, 13px)', 
           scale: hovered ? 2 : 1,
