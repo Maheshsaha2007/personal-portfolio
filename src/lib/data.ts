@@ -36,107 +36,42 @@ export interface Certification {
 
 export const PERSONAL_INFO = {
   name: 'Mahesh Saha',
-  title: 'Creative AI Developer & Tech Architect',
+  title: 'Software Developer',
   shortTitle: 'Software Developer',
-  subtitle: 'I build intelligent products, interfaces & experiences.',
-  taglines: ['Creative Developer', 'ML Enthusiast', 'Problem Solver'],
+  subtitle: 'Fresher seeking internship opportunities.',
   email: 'maheshsaha2007@gmail.com',
   location: 'Jaipur, Rajasthan, India',
   github: 'https://github.com/Maheshsaha2007',
   linkedin: 'https://www.linkedin.com/in/mahesh-saha-a8438a377',
-  twitter: 'https://x.com',
-  instagram: 'https://instagram.com',
-  resumeUrl: '/assets/Mahesh_Saha_Resume.pdf',
-  photoUrl: '/assets/mahesh_pic.jpg',
-  bio: 'I am a passionate software developer dedicated to crafting modern interactive web applications and data-driven systems. Focused on robust frontends and backend data engineering, I am constantly expanding my expertise into Machine Learning, Neural Networks, and Advanced AI.',
-  stats: [
-    { label: 'Major Projects Built', value: '10+' },
-    { label: 'Technologies Mastered', value: '15+' },
-    { label: 'Years Coding Experience', value: '2+' }
-  ]
+  techLanguages: ['HTML', 'CSS', 'JavaScript', 'Next.js', 'Node.js', 'Tailwind CSS', 'React', 'MongoDB', 'Python', 'Flask', 'Django'],
+  codingExperience: 'Fresher',
+  projectCount: 2,
+  bio: "I'm a Computer Science undergraduate with a passion for building things that work — clean, efficient, and purposeful software. My foundation is strong in Data Structures & Algorithms, Object-Oriented Programming, and core CS concepts. I'm actively looking for Software Developer internship opportunities where I can contribute, learn, and grow."
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: 'climavision',
-    title: 'ClimaVision',
-    description: 'Weather dashboard with cinematic data visualization and live forecast panels.',
-    longDescription: 'ClimaVision is a responsive weather intelligence dashboard built with semantic HTML, CSS animations, and vanilla JavaScript. It surfaces multi-day forecasts, animated condition states, and glassmorphic UI panels optimized for quick environmental scanning.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Charts', 'Glass UI'],
+    id: 'stock-predictor',
+    title: 'Stock Predictor',
+    description: 'A web app that predicts stock price trends using machine learning models.',
+    longDescription: 'The Stock Predictor application leverages Python Flask backend with TensorFlow models to forecast stock movements, and a React/Next.js frontend for interactive visualizations. It demonstrates data ingestion, preprocessing, model training, and real-time prediction display.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Next.js', 'Node.js', 'Tailwind CSS', 'React', 'MongoDB', 'Python', 'Flask', 'Django'],
     image: '/assets/stock_predictor.png',
-    github: 'https://github.com/Maheshsaha2007',
-    category: 'Frontend',
+    github: 'https://github.com/Maheshsaha2007/stock-predictor',
+    demo: 'https://stock-predictor.example.com',
+    category: 'Full Stack'
   },
   {
-    id: 'portfolio',
-    title: 'Portfolio Website',
-    description: 'This cinematic 3D portfolio — Next.js, R3F, GSAP, and Framer Motion.',
-    longDescription: 'A production-grade personal portfolio featuring React Three Fiber hero scenes, Lenis smooth scrolling, GSAP ScrollTrigger storytelling, glassmorphism, and magnetic micro-interactions designed for award-level presentation.',
-    tech: ['Next.js', 'React', 'Tailwind', 'Framer Motion', 'Three.js'],
-    image: '/assets/data_analytics.png',
-    github: 'https://github.com/Maheshsaha2007',
-    category: 'Full Stack',
-  },
-  {
-    id: 'ai-assistant',
-    title: 'AI Assistant',
-    description: 'ML-powered conversational assistant with NLP inference pipelines.',
-    longDescription: 'An intelligent assistant prototype combining Python backends with TensorFlow models for intent classification and response generation. Designed as a modular stack for experimenting with NLP workflows and model serving.',
-    tech: ['Python', 'TensorFlow', 'NLP', 'Flask'],
-    image: '/assets/stock_predictor.png',
-    github: 'https://github.com/Maheshsaha2007',
-    category: 'AI & ML',
-    stats: [
-      { label: 'Latency', value: '<300ms' },
-      { label: 'Intents', value: '24+' },
-      { label: 'Accuracy', value: '91%' },
-    ],
-  },
-  {
-    id: 'ecopulse',
-    title: 'EcoPulse Prediction Hub',
-    description: 'AI-powered environmental dashboard predicting ecological trends and metrics.',
-    longDescription: 'EcoPulse is an environmental forecasting engine designed to predict critical climate metrics. Leveraging Machine Learning algorithms, it runs real-time simulations to aid in ecological decision-making with Flask and Pandas backends.',
-    tech: ['Python', 'Flask', 'Pandas', 'Scikit-Learn', 'Plotly'],
-    image: '/assets/stock_predictor.png',
-    github: 'https://github.com/Maheshsaha2007',
-    category: 'AI & ML',
-    stats: [
-      { label: 'Accuracy', value: '94.2%' },
-      { label: 'Process Speed', value: '<200ms' },
-      { label: 'Data Points', value: '10k+' },
-    ],
-  },
-  {
-    id: 'zenith',
-    title: 'Zenith Data Analytics Engine',
-    description: 'Visual pipeline parser extracting patterns from complex datasets.',
-    longDescription: 'Zenith is a modular analytics engine for heavy data manipulation and statistical forecasting. It delivers interactive charting, correlation discovery, and customizable layouts for operational and research workflows.',
-    tech: ['Flask', 'Pandas', 'NumPy', 'Plotly', 'Tailwind CSS'],
-    image: '/assets/data_analytics.png',
-    github: 'https://github.com/Maheshsaha2007',
-    category: 'Data Engineering',
-    stats: [
-      { label: 'Throughput', value: '2GB/s' },
-      { label: 'Chart Render', value: '60fps' },
-      { label: 'Parsers', value: '8' },
-    ],
-  },
-  {
-    id: 'snapframe',
-    title: 'SnapFrame',
-    description: 'Photo sharing experience with real-time sync and secure client utilities.',
-    longDescription: 'SnapFrame combines a React interface with Firebase for media workflows, plus a local-first cryptographic utility for secure password generation using the Web Crypto API — zero server exposure for sensitive operations.',
-    tech: ['React', 'Firebase', 'JavaScript', 'Web Crypto API'],
+    id: 'password-generator',
+    title: 'Password Generator',
+    description: 'A secure password generator built with modern web technologies.',
+    longDescription: 'The Password Generator provides client‑side cryptographically secure password creation using the Web Crypto API, packaged with a sleek Tailwind CSS UI and hosted on Vercel. It offers customizable length, character sets, and copy‑to‑clipboard functionality.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Next.js', 'Node.js', 'Tailwind CSS', 'React'],
     image: '/assets/password_generator.png',
-    github: 'https://github.com/Maheshsaha2007',
-    category: 'Full Stack',
-    stats: [
-      { label: 'Client Processing', value: '100%' },
-      { label: 'Realtime', value: 'Yes' },
-      { label: 'Offline', value: 'Ready' },
-    ],
-  },
+    github: 'https://github.com/Maheshsaha2007/password-generator',
+    demo: 'https://password-gen.example.com',
+    category: 'Frontend'
+  }
 ];
 
 export const SKILLS: Skill[] = [
